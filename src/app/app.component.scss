@@ -1,0 +1,23 @@
+
+
+.main-wrapper.rtl{
+  direction: rtl;
+  text-align: right !important;
+}
+
+.toaster{
+  position: absolute;
+  box-shadow: 0 0 4px 0 gray;
+  background-color: #ffffff;
+  right: 0;
+  min-width: 330px;
+  top: 2px;
+  z-index: 9999;
+  .toaster-header{
+    p{
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+}

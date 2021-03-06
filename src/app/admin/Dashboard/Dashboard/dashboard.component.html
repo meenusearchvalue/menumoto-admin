@@ -1,0 +1,70 @@
+<div class="page-header">
+    <h3 class="page-title">
+        Review Management
+    </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/theme/dashboard">Review Management</a></li>
+            <li class="breadcrumb-item active" aria-current="page">List</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Reviews</h4>
+                <div class="row mb-4">
+                    <div class="col-md-6 form-group d-inline">
+                        <form [formGroup]="searchForm" (ngSubmit)="searchItem()">
+                            <div class="search-driver input-group">
+                                <input type="text" class="form-control pl-2" formControlName="search" placeholder="Search By Name,Email & Phone"/>
+                                <div class="input-group-append"><button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>Search</button></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-sm-12 mr-0 pr-0">
+                        <div class="pull-right">
+                            <div class="input-group-append">  <button class="btn btn-primary" (click)="actionAllReview()" type="button"><i class="fa fa-search"></i>Approved all reviews</button>
+                      </div>  </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Review(Restaurant/Menu Item)</th>
+                                <th>Review Type(Add/Edit)</th>
+                                <th>Review</th>
+                                <th>Rating</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="prodList.length>0">
+                            <tr
+                                *ngFor="let prod of prodList | paginate:{ itemsPerPage:limit, currentPage:page, totalItems:prodCount}; let i=index ">
+                                <td>{{prod.user_id}}</td>
+                                <td>Menu Item</td>
+                                <td>Add</td>
+                                <td>{{prod.review}}</td>
+                                <td>{{prod.rating}}</td>
+                               
+                                <td><label class="badge badge-danger"  *ngIf="prod.status=='PENDING'" (click)="actionReview(prod.id,'REJECTED')">REJECTED</label>
+                                    <label class="badge badge-success"  *ngIf="prod.status=='APPROVED'" >APPROVED</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody *ngIf="prodList.length==0">
+                            <tr>
+                                <td colspan=6 class="text-center text-bold">No records Found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls *ngIf="prodCount !==0 " (pageChange)="pageChange($event)"></pagination-controls>
+</div>

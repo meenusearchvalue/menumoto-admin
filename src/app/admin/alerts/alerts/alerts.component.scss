@@ -1,0 +1,32 @@
+.alert-background {
+    background-color: #f7f7f7;
+    height: 100vh;
+  }
+.alert-heading h3 {
+    font-size: 26px;
+    padding-bottom: 30px;
+    padding-top: 18px;
+    color: #000000;
+  }
+.table-heading {
+    border-radius: 5px;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1) !important;
+    background-color: #ffffff !important;
+    height: 50px;
+    line-height: 50px;
+  }
+.table-striped tbody tr {
+    height: 50px;
+    line-height: 50px;
+    &:nth-of-type(even) {
+      background-color: #ffffff;
+    }
+  }
+.table.table-border {
+    thead th {
+      border-bottom: none;
+    }
+    td, th {
+      border-top: none;
+    }
+  }

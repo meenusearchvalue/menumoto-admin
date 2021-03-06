@@ -1,0 +1,59 @@
+
+#dashborad-main{
+  margin-top: 63px;
+    .breadcrumb{
+      border-bottom: none!important;
+    }
+    
+     
+    
+  }  
+  .trnstn .card:hover {
+    transform: scale(1.08);
+    transition: 200ms;
+    
+  }
+  .trnstn .card{
+    transition: 200ms;
+    cursor: pointer;
+  }    
+
+#inner-content {
+  .form-group label {
+    font-size: 16px;
+    }
+    .card{
+      min-height: 180px;
+      min-width: 220px;
+      background: #ffffff !important;
+       color: #404e67;
+      box-shadow: 0 0 8px 0px #0000001f;
+    }
+  .card-adjust {   
+    .card-content .fa{
+      font-size: 35px;
+    }
+  }
+  
+}    
+ .ngx-datepicker-position-bottom-right{
+   z-index: 500!important;
+}
+// css for pop up image
+
+.head-circle{
+  height: 100px;
+  width: 100px;
+  border-radius: 49px;
+}
+.card:focus{
+  outline: none!important
+}
+
+
+
+
+
+
+
+
